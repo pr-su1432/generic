@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
+using System.Collections.Generic;
 namespace generic
 {
     class program
@@ -10,36 +11,21 @@ namespace generic
             double[] doubleArry = { 1.1, 2.2, 3.3, 4.4, 5.5 };
             char[] charArry = { 'P', 'R', 'A', 'S', 'A', 'N', 'N', 'A' };
 
-            program.toprint(intArry);
-            program.toprint(doubleArry);
-            program.toprint(charArry);
+            program.toprint<int>(intArry);
+            program.toprint<double>(doubleArry);
+            program.toprint<char>(charArry);
 
         }
 
-        public static void toprint(int[] inputArry)
+        public static void toprint<T>(T[] inputArry)
         {
-            foreach (int element in inputArry)
+            foreach (var element in inputArry)
             {
                 Console.WriteLine(element);
             }
             Console.WriteLine("----------------------");
         }
-        public static void toprint(double[] inputArry)
-        {
-            foreach (double element in inputArry)
-            {
-                Console.WriteLine(element);
-            }
-            Console.WriteLine("----------------------");
-        }
-        public static void toprint(char[] inputArry)
-        {
-            foreach (char element in inputArry)
-            {
-                Console.WriteLine(element);
-            }
-            Console.WriteLine("----------------------");
-        }
+        
     }
 }
 
